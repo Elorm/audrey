@@ -52,3 +52,7 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+env.sh
+heroku_config.sh
+staticfiles
+migrations
