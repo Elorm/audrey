@@ -13,13 +13,13 @@ def home(request, template="bridal/index.html", context=None):
 def about(request, template="bridal/about.html", context=None):
 	return render_to_response(template, context)
 
-def gallery(request):
-	return HttpResponse("<h2>Gallery</h2>")
+def gallery(request, template="bridal/gallery.html", context=None):
+	return render_to_response(template, context)
 
-def contact(request):
-	return HttpResponse("<h2>Contact</h2>")
+def contact(request, template="bridal/contact.html", context=None):
+	return render_to_response(template, context)
 
-	# return render_to_response("blog/index.html",RequestContext(request))
+# return render_to_response("blog/index.html",RequestContext(request))
 # def blog(request):
 # 	if request.method == "POST":
 # 		email= None

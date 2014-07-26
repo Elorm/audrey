@@ -54,5 +54,6 @@ docs/_build/
 
 env.sh
 heroku_config.sh
+remove.sh
 staticfiles
 migrations

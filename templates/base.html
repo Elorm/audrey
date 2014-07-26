@@ -1,0 +1,75 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="{% static 'assets/bs/css/bs.min.css' %}" rel="stylesheet">
+		<link href="{% static 'assets/fa/css/fa.min.css' %}" rel="stylesheet">
+		<link href="{% static 'bridal/stylesheets/bridal.css' %}" rel="stylesheet">
+		
+		<title>Audrey Bridal - {% block title %}{% endblock %}</title>
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+	<div id="wrap">
+
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'home' %}">Audrey Bridal</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-left"> 
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'gallery' %}">Gallery</a></li>
+						<li><a href="{% url 'about' %}">About</a></li>
+						<li><a href="{% url 'contact' %}">Contact us</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+
+		<!-- Container for main content -->
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<div class="container">
+			<ul class="site-footer-links text-muted credit">          
+				<li>&copy; 2014 <span title="">Audrey Bridal</span></li>
+			</ul>
+			<ul class="list-unstyled list-inline pull-right">
+				<li class="facebook-link"><a href="" target="_blank"><i class='fa fa-facebook'></i></a></li>
+				<li class="google-link"><a href=""><i class='fa fa-google-plus'></i></a></li>
+				<li class="instagram-link"><a href=""><i class='fa fa-instagram'></i></a></li>
+				<li class="pinterest-link"><a href=""><i class='fa fa-pinterest'></i></a></li>
+				<li class="twitter-link"><a href="" target="_blank"><i class='fa fa-twitter'></i></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+    <script src="{% static 'assets/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bs/js/bs.min.js' %}"></script>
+	</body>
+</html>

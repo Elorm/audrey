@@ -1,140 +1,76 @@
-body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
-
 html,body{
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
+  background-color: #f8f8f8;
 }
 
-.login-container{
-    position: relative;
-    width: 300px;
-    margin: 80px auto;
-    padding: 20px 40px 40px;
-    text-align: center;
-    background: #fff;
-    border: 1px solid #ccc;
+p { 
+  word-break: break-all
 }
 
-.login-container::before,.login-container::after{
-    content: "";
-    position: absolute;
-    width: 100%;height: 100%;
-    top: 3.5px;left: 0;
-    background: #fff;
-    z-index: -1;
-    -webkit-transform: rotateZ(4deg);
-    -moz-transform: rotateZ(4deg);
-    -ms-transform: rotateZ(4deg);
-    border: 1px solid #ccc;
-
+.navbar-default {
+  background-color: #fff;
+  border-color:  #428bca;
 }
 
-.login-container::after{
-    top: 5px;
-    z-index: -2;
-    -webkit-transform: rotateZ(-2deg);
-     -moz-transform: rotateZ(-2deg);
-      -ms-transform: rotateZ(-2deg);
-
+.navbar-default .navbar-nav > li > a {
+  color: #428bca;
 }
 
-.avatar{
-    width: 100px;height: 100px;
-    margin: 10px auto 30px;
-    border-radius: 100%;
-    border: 2px solid #aaa;
-    background-size: cover;
+.navbar-default .navbar-nav > .active > a,
+
+.navbar-default .navbar-nav > .active > a:hover{
+  color: #000;
+  background-color: transparent;
 }
 
-.form-box input{
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    height:40px;
-    border: 1px solid #ccc;;
-    transition:0.2s ease-in-out;
-    margin-top: 10px;
-
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
 }
 
-.form-box input:focus{
-    outline: 0;
-    background: #eee;
+/* Set the fixed height of the footer here */
+#footer {
+  height: 70px;
+  background-color: #fff;
+  border-top: solid 1px #428bca;
 }
 
-.form-box {
-    border-radius: 5px 5px 0 0;
-    text-transform: lowercase;
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding: 60px 15px 0;
 }
 
-.form-box button.login{
-    margin-top:15px;
-    padding: 10px 20px;
+.container .credit {
+  margin: 20px 0;
 }
 
-.form-control {
-  font-size: 1.1em;
-  height: auto;
-  border: 2px solid #ccc;
-  -webkit-transition: all .35s ease;
-  -moz-transition: all .35s ease;
-  -ms-transition: all .35s ease;
-  -o-transition: all .35s ease;
-  transition: all .35s ease;
-  box-shadow: none;
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.form-control:focus {
-  border-color: #6c7544;
-  outline: none;
-  -webkit-box-shadow:none; 
-  box-shadow:none; 
+.site-footer-links{
+  list-style: none;
+  display: inline;
 }
 
-.form-control {
-  padding: 10px;
-  border: solid 3px #c9c9c9;
-  transition: border 0.3s;
+.site-footer-links > li{
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
 }
 
-.form-control:focus,
-.form-control.focus {
-  border: solid 3px #969696;
+#footer{
+  padding-top: 20px;
 }
-
-
-
-#main_content {
-  margin-top: 10%;
-}
-
-#login {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-.good {
-	color: green;
-}
-
-.bad {
-	color: red;
-}
-
-.neutral {
-	color: blue;
-}
-
-.blog-item {
-	background: #fff;
-	padding: 20px;
-	position: relative;
-	border-radius: 0px;
-	font-family: 'Roboto', sans-serif;
-	margin-bottom: -15px;
-	-webkit-box-shadow: 0 1px 3px -1px rgba(0,0,0,0.5); *
-}
-
-p { word-break: break-all
- }
-
