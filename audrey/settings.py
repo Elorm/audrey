@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'bridal',
     'south',
+    'imagekit',
+    'taggit',
 )
 
 # List of callables that know how to import templates from various sources.
@@ -59,7 +61,6 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    # Required by allauth template tags
     "django.core.context_processors.request",
 )
 
@@ -176,4 +177,8 @@ SUIT_CONFIG = {
 
     # misc
     # 'LIST_PER_PAGE': 15
+}
+
+SOUTH_MIGRATION_MODULES = {
+    'taggit': 'taggit.south_migrations',
 }

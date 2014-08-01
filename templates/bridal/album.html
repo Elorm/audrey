@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans "Album" %}{% endblock %}
+
+{% block extra_stylesheets %}
+	<link rel="stylesheet" href="{% static 'assets/fancy/jquery.fancybox.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/fancy/helpers/jquery.fancybox-buttons.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'assets/fancy/helpers/jquery.fancybox-thumbs.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static 'bridal/stylesheets/album.css' %}">
+{% endblock %}
+
+{% block content %}
+	<div>
+		<div class="row text-center">
+			<h1>Album</h1>
+			{{album.title}}
+			{{album.slug}}
+			{{album.pub_date}}
+			<h4>{{album.description}}</h4>
+		</div>
+		<div class="row">
+			<div class='list-group gallery'>
+				{% for photo in album.photo_set.all %}
+		            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3 album-photo'>
+	                    {% if photo.description%}
+		                <a class="thumbnail fancybox" rel="ligthbox" title="{{photo.description}}" href="{{photo.photo.url}}">
+	                    {% else %}
+		                <a class="thumbnail fancybox" rel="ligthbox" title="{{photo.title}}" href="{{photo.photo.url}}">
+	                    {% endif %}
+		                    <img class="img-responsive" alt="" src="{{photo.photo_thumbnail.url}}" />
+		                </a>
+		            </div> <!-- col-6 / end -->
+				{% endfor %}
+	        </div> <!-- list-group / end -->
+		</div> <!-- row / end -->
+	</div> <!-- container / end -->
+{% endblock %}
+
+
+{% block extra_scripts %}
+	<script src="{% static 'assets/fancy/jquery.fancybox.js' %}"></script>
+	<script src="{% static 'assets/fancy/helpers/jquery.fancybox-buttons.js' %}"></script>
+	<script src="{% static 'assets/fancy/helpers/jquery.fancybox-thumbs.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+		    $(".fancybox").fancybox({
+		        openEffect: "none",
+		        closeEffect: "none",
+				nextEffect		: 'none',
+				closeBtn		: false,
+				loop: true,
+				helpers		: {
+					title	: { type : 'outside' },
+					buttons	: {},
+					thumbs	: {
+						width	: 50,
+						height	: 50
+					}
+				},
+				next : {
+					13 : 'left', // enter
+					34 : 'up',   // page down
+					39 : 'left', // right arrow
+					40 : 'up'    // down arrow
+				},
+				prev : {
+					8  : 'right',  // backspace
+					33 : 'down',   // page up
+					37 : 'right',  // left arrow
+					38 : 'down'    // up arrow
+				},
+				close  : [27], // escape key
+				play   : [32], // space - start/stop slideshow
+				toggle : [70]  // letter "f" - toggle fullscreen
+		    });
+		});   
+	</script>
+{% endblock%}
+
+

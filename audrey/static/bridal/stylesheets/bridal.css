@@ -37,9 +37,11 @@ p {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: 70px;
+  padding-top: 20px;
+  height: 60px;
   background-color: #fff;
   border-top: solid 1px #428bca;
+  margin-bottom: -10px;
 }
 
 /* Custom page CSS
@@ -69,8 +71,4 @@ p {
   margin-left: 10px;
   margin-right: 10px;
   font-size: 12px;
-}
-
-#footer{
-  padding-top: 20px;
 }

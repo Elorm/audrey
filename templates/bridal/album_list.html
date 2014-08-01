@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{% trans "Gallery" %}{% endblock %}
+
+{% block extra_stylesheets %}
+	<link href="{% static 'bridal/stylesheets/gallery.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+	<br>
+	<div class="row text-center">
+		<h1>List of Albums</h1>
+	</div>
+	<br>
+	<br>
+
+	<div class="row">
+
+	{% for album in album_list %}
+	<a href="{% url 'bridal_album_detail' album.slug %}">
+	  <div class="col-sm-6 col-md-3">
+	    <div class="thumbnail">
+	      <img src="{{album.photo_set.all.0.photo_thumbnail.url}}" alt="{{album.photo_set.all.0.photo.title}}">
+	      <div class="caption">
+	        <h3 class="text-center">{{album.title}}</h3>
+	      </div>
+	    </div>
+	  </div>
+	</a>
+	{% endfor %}
+
+	</div>
+
+	{% if is_paginated %}
+
+	<div class="row">
+		<ul class="pager">
+	    {% if page_obj.has_previous %}
+		  <li><a href="{% url 'gallery_paginated' page_obj.previous_page_number %}">{% trans 'Previous' %}</a></li>
+	    {% endif %}
+	    {% if page_obj.has_next %}
+		  <li><a href="{% url 'gallery_paginated'  page_obj.next_page_number %}">{% trans 'Next' %}</a></li>
+	    {% endif %}
+		</ul>
+	</div>
+
+	{% endif %}
+	
+{% endblock %}
